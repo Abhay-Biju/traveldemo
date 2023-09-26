@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Autour+One&family=Bebas+Neue&family=Bungee+Spice&family=Creepster&family=Dancing+Script&family=Freehand&family=Gloock&family=IM+Fell+Great+Primer+SC&family=Noto+Sans+TC&family=Pacifico&family=Righteous&family=Rye&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+
+  
+Media queries in CSS allow you to apply different styles to your web page based on the screen size or device characteristics. If you want to write a media query that targets a screen width of 400 pixels or less, you can do so like this:
+
+css
+Copy code
+/* CSS for screens with a width of 400 pixels or less */
+@media screen and (max-width: 400px) {
+  /* Your CSS rules for screens 400px or less go here */
+  body {
+    background-color: lightblue;
+  }
+  /* Add more styles as needed */
+}
+
+        hr {
+            border: none;
+            height: 2px; /* Adjust the thickness as needed */
+            background-color: #000; /* Adjust the color as needed */
+            font-weight: bold;
+        }
+           /* Reset some default styles for the demo */
+           /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        } */
+
+        /* Container for the image and text */
+        .image-container {
+            position: relative;
+            width: 300px;
+        }
+
+        /* Image styles */
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Text overlay styles */
+        .text-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Show text overlay on hover */
+        .image-container:hover .text-overlay {
+            opacity: 1;
+        }
+
+        /* Text styles */
+        .text {
+            font-size: 18px;
+            padding: 10px;
+        }
+
+         /* Background color change on hover */
+         .bg-color-change:hover {
+            background-color: #000000; /* Change to your desired color */
+            color: white;
+        }
+        
+        /* Image with fade-in transition */
+        .image-fade-in {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0; /* Start with opacity 0 (fully transparent) */
+            transition: opacity 1s ease-in-out; /* Add a 1-second fade-in transition */
+        }
+
+        /* Hover effect to trigger the fade-in */
+        .image-container:hover .image-fade-in {
+            opacity: 1; /* When hovering, set opacity to 1 (fully visible) */
+        }
+        .box-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }
+
+        /* Individual box items */
+        .box-2 {
+            width: 450px;
+            height: 350px;
+            background-color: #ff562213;
+            margin: 10px;
+            margin-left: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Heading inside the box */
+        .box-2 h2 {
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        /* Hover effect to scale and show heading */
+        .box-2:hover {
+            transform: scale(1.1);
+        }
+
+        .box-2:hover h2 {
+            opacity: 1;
+            transform: translateY(-10px);
+        }
+       /* test */
+
+       section {
+            background-color: #eeeeee; /* Background color */
+            padding: 20px; /* Padding to create some space inside the section */
+            text-align: center; /* Center-align the content */
+            border-radius: 10px; /* Rounded corners for the section */
+            box-shadow: 0 0 20px rgba(0, 0, 255, 0.5); /* Glowing box-shadow */
+        }
+
+        /* Style the heading inside the section */
+        h1 {
+            color: #333; /* Heading text color */
+        }
+</style>
+<link rel="icon" href="https://media.licdn.com/dms/image/C4D0BAQFheCtokSoTmA/company-logo_200_200/0/1623244845245?e=2147483647&v=beta&t=EGAwVwKB6q0saCWeD2iTVjG86MlRY-v0SDFikUEgP58" type="img/png">
+</head>
+<body>
+
+    <!-- nav -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><b>BEAR GRYLLS</b>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">WELCOME</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#Home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">ABOUT</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    RUNNING WILD WITH BEAR GRYLLS
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#about">ABOUT</a></li>
+                    <li><a class="dropdown-item" href="#video">VIDEO</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+
+<!-- carousel -->
+    <section>
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://wallpapercave.com/wp/wp2492934.jpg" height="800px" class="d-block w-100" alt="..bear.">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>"Running wild with bear grylls"</h5>
+                  <p>Are you guys ready for some adventurs.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://wallpapercave.com/wp/wp2599965.jpg" height="800px" class="d-block w-100" alt="bear">
+                <div class="carousel-caption d-none d-md-block">
+                  
+                </div>
+              </div>
+              <!-- <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div> -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+    <hr>
+
+    <!-- image hover -->
+    <section id="Home">
+    <div class="row">
+        <div class="image-container mt-3 ms-3">
+            <img src="https://cutewallpaper.org/21/bear-grylls-wallpapers-hd/Man-Vs-Wild-Bear-Grylls-Wallpapers-HD-Quality-25042018.jpg" height="300px" alt="Image">
+            <div class="text-overlay">
+                <div class="text"> Bear Grylls
+                    <br><br>
+                    <p>Edward Michael "Bear" Grylls OBE ( born 7 June 1974) is a British adventurer and television presenter</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="image-container mt-3 ms-3">
+            <img src="https://cutewallpaper.org/21/bear-grylls-wallpapers-hd/Bear-Grylls-Wallpaper-Bear-Grylls-On-Mountain-Hd-.jpg" height="300px" alt="Image">
+            <div class="text-overlay">
+                <div class="text"> Bear Grylls
+                    <br><br>
+                    <p>What is the rank of Bear Grylls?
+                        In 2004, Grylls was awarded the rank of Lieutenant Colonel in the Royal Navy Reserve. He was then awarded the rank of Honorary Lieutenant Colonel in the Royal Marines Reserve in 2013 and was promoted to Honorary Colonel in June 2021.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="image-container mt-5 ms-3">
+            <img src="https://i.pinimg.com/236x/4e/1e/83/4e1e83d317aca00d3a2b72465f971682--bear-grylls-eye-candy.jpg" height="300px" alt="Image">
+            <div class="text-overlay">
+                <div class="text"> 
+                    <br><br>
+                    <p>His popularity is so high that in 2019 many celebrities have appeared on his show such as Natalie Portman, Channing Tatum, WWE Champion Dave Bautista, Vicki Kaushal and even Indian Prime Minister Narendra Modi..</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-container mt-5 ms-3">
+            <img src="https://wallpaperaccess.com/full/2029035.jpg" height="300px" alt="Image">
+            <div class="text-overlay">
+                <div class="text">
+                    <br><br>
+                    <p>BEAR GRYLLS OBE, has become known worldwide as one of the most recognized faces of survival and outdoor adventure. Trained from a young age in martial arts, Grylls went on to spend three years as a soldier in the British Special Forces, as part of 21 SAS Regiment..</p>
+                </div>
+            </div>
+        </div>
+
+
+      </section>
+    </div>
+    <hr>
+
+    <section id="about">
+
+  <div class="container mt-3 bg-dark">
+
+    <h1 class="text-light" >ABOUT</h1>
+    <P class="text-light">Grylls was born in Donaghadee, Northern Ireland on 7 June 1974. His family has a strong cricketing background, his grandfather Neville Ford and great-great-grandfather William Augustus Ford having both been first-class cricketers. He grew up in Donaghadee, Northern Ireland, until the age of four, when his family moved to Bembridge on the Isle of Wight.
+
+        He is the son of Conservative politician Sir Michael Grylls and his wife Sarah "Sally" (née Ford). Grylls has one sibling, an elder sister, Lara Fawcett, who gave him the nickname 'Bear' when he was a week old.
+        
+        From an early age, he learned to climb and sail with his father, who was a member of the prestigious Royal Yacht Squadron. As a teenager, he learned to skydive and earned a second dan black belt in Shotokan karate. He speaks English, Spanish, and French. He is an Anglican, and has described his Christian faith as the "backbone" in his life:"You can't keep God out. He's all around us, if we're just still enough to listen."</P>
+<!-- LIVE DEMO -->
+<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    CLICK HERE
+  </a>
+  <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    Button with data-bs-target
+  </button>
+   -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        These are my social media platforms
+      </div>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://www.facebook.com/RealBearGrylls/" target="_blank">FACEBOOK</a></li>
+          <li><a class="dropdown-item" href="https://www.instagram.com/beargrylls/?hl=en" target="_blank">INSTAGRAM</a></li>
+          <li><a class="dropdown-item" href="https://www.youtube.com/@TheIslandwithBearGrylls" target="_blank">YOU TUBE</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>  
+
+</section>
+
+<hr>
+<section id="about">
+  <h1>RUNNING WILD WITH BEAR GRYLLS</h1>
+  <p></p>
+</section>
+
+
+  <div class="row">
+    <div class="col mt-3">
+        <img  src="https://img.nbc.com/sites/nbcunbc/files/images/2018/4/16/Running_Wild-S4-Logo-1920x1080.jpg" height="300px" width="700px" alt="">
+    </div>
+    <div class="col mt-3">
+        <p class="bg-color-change">Running Wild with Bear Grylls is a survival skills reality television series starring Bear Grylls. In each episode, Grylls brings a different celebrity along on his adventures. The crew consists of host Bear Grylls, a story producer, two camera cinematographers, two field recordists, and a mountain guide. Celebrities such as Zac Efron, Channing Tatum, and Ben Stiller made appearances on the first season of the show. In season 2, Kate Winslet, Michael B. Jordan, Kate Hudson, Michelle Rodriguez, James Marsden, and then sitting President Obama appeared. The series' fourth season premiered on May 7, 2018. Grylls announced on October 27, 2018, that they will begin filming for a fifth season. In February 2019, it was announced that the show would be moving to National Geographic for its fifth season which premiered on November 5, 2019. The show was rebranded as Running Wild with Bear Grylls: The Challenge starting with Season 7.</p>
+    </div>
+  </div>
+  <hr>
+
+  <section id="video">
+
+  <div class="row">
+    <div class="box-2 mt-3 ms-3" style="margin-right: 120px;">
+        <h2></h2>
+        <iframe class="ms-3" width="560" height="315" src="https://www.youtube.com/embed/wAp9aUw-qqY?si=ISyUtf5lQe5Oay5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="box-2 mt-3 ms-3" style="margin-right: 120px;">
+        <h2></h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/T7l36CSmbMs?si=HsRC82oUwfesgwqQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- <iframe class="ms-3" width="560" height="315" src="https://www.youtube.com/embed/wAp9aUw-qqY?si=ISyUtf5lQe5Oay5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+    </div>
+  
+
+  </div>
+</section>
+
+  <footer class="text-center text-white" style="background-color: #caced1;">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Images -->
+      <section class="">
+        <div class="row">
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Images -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+
+
+
+    
+</body>
+</html>
